@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-client-login',
@@ -12,21 +13,18 @@ export class ClientLoginComponent implements OnInit {
     tenant: string;
     loginForm: FormGroup;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private formBuilder: FormBuilder) { }
-
-  ngOnInit() {
+  constructor(private router: Router, private formBuilder: FormBuilder, private authService: AuthService, private activatedRoute: ActivatedRoute) { 
 
     // https://kamranahmed.info/blog/2018/02/28/dealing-with-route-params-in-angular-5/
 	this.activatedRoute.params.subscribe(routeParams => {
         this.tenant = routeParams["tenant"];  
     });
-    
 
 
-    // redirect to home if already logged in
-    // if (localStorage.getItem["currentUser"]) {
-    //     this.router.navigate(['/']);
-    // }
+  }
+
+  ngOnInit() {
+
   
     this.loginForm = this.formBuilder.group({
         username: ['', Validators.required],
@@ -36,18 +34,19 @@ export class ClientLoginComponent implements OnInit {
 
   }
 
-  // convenience getter for easy access to form fields
+  // easy access to form fields
   get f() { return this.loginForm.controls; }
 
 
   onSubmit() {
-    // this.submitted = true;
 
     if (this.loginForm.invalid) {
       return;
     }
 
-    alert(this.f.username.value + " " + this.f.password.value);
+    this.authService.login(this.f.username.value, this.f.password.value, "user");
+
+    this.router.navigate(["/tenant/" + this.tenant + "/client-panel"]);
 
 
 

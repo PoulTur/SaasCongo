@@ -1,0 +1,28 @@
+<div style="background-color: lightgrey;">
+
+<p>Welcome to FineApp SAAS platform!</p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<div *ngIf="isAuthenticated()">
+    <a (click)="logout()">Logout</a>
+
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<div *ngIf="isAnonymous()">
+    <a routerLink="/login">Tenant Login</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <a routerLink="/register">Tenant Registration</a>
+</div>
+
+
+</div>
+
+
+
+
+<router-outlet></router-outlet>

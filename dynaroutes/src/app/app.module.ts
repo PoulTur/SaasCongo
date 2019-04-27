@@ -22,6 +22,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { AuthGuard } from './_guards/auth.guard';
 import { UnauthGuard } from './_guards/unauth.guard';
 import { HomeComponent } from './home/home.component';
+import { HomeLayoutComponent } from './home-layout/home-layout.component';
+import { ClientLayoutComponent } from './client-layout/client-layout.component';
+import { ClientPanelComponent } from './client-panel/client-panel.component';
 
 
 
@@ -32,7 +35,10 @@ import { HomeComponent } from './home/home.component';
     TenantLoginComponent,
     TenantRegistrationComponent,
     TenantPanelComponent,
-    HomeComponent
+    HomeComponent,
+    HomeLayoutComponent,
+    ClientLayoutComponent,
+    ClientPanelComponent
   ],
   imports: [
     BrowserModule,

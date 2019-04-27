@@ -9,18 +9,9 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   
-    constructor(private authService: AuthService, private router: Router){}
-
-    isAuthenticated(){
-        return this.authService.isLoggedIn();
-    }
+    constructor(private authService: AuthService){}
 
 
-
-    logout(){
-        this.authService.logout();
-        this.router.navigate(["/home"]);
-    }
 
 
 }

@@ -1,9 +1,42 @@
-<input type="text" pInputText />
+<p>
+  Please register to FineApp
+</p>
 
 
+<div class="width: 400px;">
+    
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
+      <div>
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" />
+        <div *ngIf="submitted && f.username.errors" >
+          <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+      </div>
 
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" />
+        <div *ngIf="submitted && f.password.errors">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+      </div>
 
-<button pButton type="button" label="Submit" ></button>
+      <div class="form-group">
+        <label for="repeatpassword">Repeat Password</label>
+        <input type="password" formControlName="repeatpassword" />
+        <div *ngIf="submitted && f.repeatpassword.errors">
+          <div *ngIf="f.repeatpassword.errors.required">Password is required</div>
+        </div>
+      </div>
+
+      <div>
+        <button class="btn btn-primary">Register</button>
+      </div>
+
+      <div *ngIf="error">{{error}}</div>
+    </form>
+  </div>
 
 
