@@ -1,4 +1,14 @@
-<p>Welcome to FineApp!</p>
 
-<p><strong>FineApp is a SAAS platform!</strong></p>
+<div *ngIf="isAnonymous()">
+    <a routerLink="/login">Login as Tenant</a>
 
+    <br/>
+    <br/>
+
+    <a routerLink="/register">Register as new Tenant</a>
+</div>
+
+
+<br/>
+<br/>
+<br/>

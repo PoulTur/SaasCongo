@@ -1,4 +1,9 @@
+<p>Welcome to FineApp SAAS platform!</p>
+
+
+<div *ngIf="isAuthenticated()">
+    <a (click)="logout()">Logout</a>
+</div>
+
+
 <router-outlet></router-outlet>
-
-
-
