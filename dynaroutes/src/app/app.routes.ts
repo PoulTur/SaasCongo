@@ -4,18 +4,18 @@ import { ClientLoginComponent } from './client-login/client-login.component';
 import { TenantRegistrationComponent } from './tenant-registration/tenant-registration.component';
 import { TenantPanelComponent } from './tenant-panel/tenant-panel.component';
 import { UnauthGuard } from './_guards/unauth.guard';
-import { HomeComponent } from './home/home.component';
+import { TenantHomeComponent } from './tenant-home/tenant-home.component';
 import { AuthGuard } from './_guards/auth.guard';
-import { HomeLayoutComponent } from './home-layout/home-layout.component';
+import { TenantLayoutComponent } from './tenant-layout/tenant-layout.component';
 import { ClientLayoutComponent } from './client-layout/client-layout.component';
 import { ClientPanelComponent } from './client-panel/client-panel.component';
 
 export const ROUTES: Routes = [
     {
         path: "", 
-        component: HomeLayoutComponent,
+        component: TenantLayoutComponent,
         children: [
-          { path: '', component: HomeComponent, pathMatch: 'full', canActivate: [UnauthGuard]},
+          { path: '', component: TenantHomeComponent, pathMatch: 'full', canActivate: [UnauthGuard]},
           { path: "tenant-panel", component: TenantPanelComponent, canActivate: [AuthGuard]}
 
         ]

@@ -21,8 +21,8 @@ import { AuthService } from './_services/auth.service';
 import { HttpClientModule } from "@angular/common/http";
 import { AuthGuard } from './_guards/auth.guard';
 import { UnauthGuard } from './_guards/unauth.guard';
-import { HomeComponent } from './home/home.component';
-import { HomeLayoutComponent } from './home-layout/home-layout.component';
+import { TenantHomeComponent } from './tenant-home/tenant-home.component';
+import { TenantLayoutComponent } from './tenant-layout/tenant-layout.component';
 import { ClientLayoutComponent } from './client-layout/client-layout.component';
 import { ClientPanelComponent } from './client-panel/client-panel.component';
 
@@ -35,8 +35,8 @@ import { ClientPanelComponent } from './client-panel/client-panel.component';
     TenantLoginComponent,
     TenantRegistrationComponent,
     TenantPanelComponent,
-    HomeComponent,
-    HomeLayoutComponent,
+    TenantHomeComponent,
+    TenantLayoutComponent,
     ClientLayoutComponent,
     ClientPanelComponent
   ],

@@ -3,11 +3,10 @@ import { AuthService } from '../_services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styles: []
+  selector: 'app-tenant-home',
+  templateUrl: './tenant-home.component.html'
 })
-export class HomeComponent implements OnInit {
+export class TenantHomeComponent implements OnInit {
 
     constructor(private authService: AuthService, private router: Router){}
 

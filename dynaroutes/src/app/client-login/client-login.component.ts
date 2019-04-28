@@ -15,8 +15,9 @@ export class ClientLoginComponent implements OnInit {
 
   constructor(private router: Router, private formBuilder: FormBuilder, private authService: AuthService, private activatedRoute: ActivatedRoute) { 
 
-    // https://kamranahmed.info/blog/2018/02/28/dealing-with-route-params-in-angular-5/
-	this.activatedRoute.params.subscribe(routeParams => {
+    // get params from parent route, otherwise undefined
+    // https://stackoverflow.com/questions/34500147/angular-2-getting-routeparams-from-parent-component
+	this.activatedRoute.parent.params.subscribe(routeParams => {
         this.tenant = routeParams["tenant"];  
     });
 
@@ -44,7 +45,7 @@ export class ClientLoginComponent implements OnInit {
       return;
     }
 
-    this.authService.login(this.f.username.value, this.f.password.value, "user");
+    this.authService.login(this.f.username.value, this.f.password.value);
 
     this.router.navigate(["/tenant/" + this.tenant + "/client-panel"]);
 

@@ -8,9 +8,9 @@ export class AuthService {
 
   constructor(private router: Router) {}
 
-  login(username: string, password: string, role: string) {
+  login(username: string, password: string) {
     // TODO - in real service only 2 params, role returned from the service
-    let user = new User(username, password, role);
+    let user = new User(username, password);
     localStorage.setItem("currentUser", JSON.stringify(user));
 
   }
@@ -23,9 +23,7 @@ export class AuthService {
     if (localStorage.getItem("currentUser")) {
       return true;
     }
-    else {
       return false;
-    }
   }
 
 

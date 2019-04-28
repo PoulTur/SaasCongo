@@ -3,11 +3,11 @@ import { AuthService } from '../_services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home-layout',
-  templateUrl: './home-layout.component.html',
+  selector: 'app-tenant-layout',
+  templateUrl: './tenant-layout.component.html',
   styles: []
 })
-export class HomeLayoutComponent {
+export class TenantLayoutComponent {
 
     constructor(private authService: AuthService, private router: Router){}
 
@@ -26,6 +26,7 @@ export class HomeLayoutComponent {
     isAnonymous(){
         return !this.isAuthenticated();
     }
+
 
 
 

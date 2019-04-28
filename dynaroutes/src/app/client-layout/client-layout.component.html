@@ -3,20 +3,10 @@
 <p>Welcome to <strong>{{tenant}}</strong> client panel.</p>
  
 
+    <div *ngIf="isAuthenticated()">
+        <a (click)="logout()">Logout</a>
 
-
-<div *ngIf="isAuthenticated()">
-    <a (click)="logout()">Logout</a>
-
-</div>
-
-
-
-<div *ngIf="isAnonymous()">
-    <a routerLink="/login">Client Login</a>
-
-</div>
-
+    </div>
 
 </div>
 
