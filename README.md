@@ -1,12 +1,11 @@
+4. Disabled that logged in client can switch to client-panel of other tenant.
+
+
 3. Mocked authorization:
 - 2 roles: "client" and "tenant" added to LocalStorage
 - route to client panel was changed from ":/tenant" to ":/client"
 - If client tries to navigate to routes reserved for tenant, gets logged out
 - If tenant tries to navigate to routes reserved for client, gets logged out
-
-- pending: logged in client can switch to client view of other tenant's
-- pending: logged in tenant can view other tenant's data
-
 
 
 2. Mocked authentication, with login and registration panels
