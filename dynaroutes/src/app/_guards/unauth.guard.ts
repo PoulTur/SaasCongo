@@ -13,8 +13,6 @@ export class UnauthGuard implements CanActivate {
 
     const currentUser = this.authService.getCurrentUser();
 
-    console.log(route);
-
 
     if (currentUser) {
 
@@ -24,9 +22,8 @@ export class UnauthGuard implements CanActivate {
             return true;
         }
         else if ((currentUser.role === Role.Tenant) && ( state.url.startsWith("/client"))){
-            // logged in tenant
+            // logged in tenant tries to navigate to client panel
             this.authService.logout();
-            //this.router.navigate(['/tenant-panel']);
             return true;
         }
         else if ((currentUser.role === Role.Tenant) && (! state.url.startsWith("/tenant-panel") && !(state.url.startsWith("/client")) )){

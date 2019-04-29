@@ -34,8 +34,11 @@ export class TenantLoginComponent implements OnInit {
     }
 
 
+    //todo - just a fake. This should be read from the server.
+    let tenantName = this.f.username.value;
 
-    this.authService.login(this.f.username.value, this.f.password.value, "tenant");
+
+    this.authService.login(this.f.username.value, this.f.password.value, "tenant", tenantName);
     
 
     this.router.navigate(['/tenant-panel']);

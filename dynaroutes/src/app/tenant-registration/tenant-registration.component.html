@@ -5,7 +5,16 @@
 
 <div class="width: 400px;">
     
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+      <div>
+        <label for="companyname">Company name</label>
+        <input type="text" formControlName="companyname" />
+        <div *ngIf="submitted && f.companyname.errors" >
+          <div *ngIf="f.companyname.errors.required">Company name is required</div>
+        </div>
+      </div>
+
 
       <div>
         <label for="username">Username</label>

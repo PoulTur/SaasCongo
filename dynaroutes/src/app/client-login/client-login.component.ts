@@ -45,7 +45,7 @@ export class ClientLoginComponent implements OnInit {
       return;
     }
 
-    this.authService.login(this.f.username.value, this.f.password.value, "client");
+    this.authService.login(this.f.username.value, this.f.password.value, "client", this.tenant);
 
     this.router.navigate(["/client/" + this.tenant + "/client-panel"]);
 

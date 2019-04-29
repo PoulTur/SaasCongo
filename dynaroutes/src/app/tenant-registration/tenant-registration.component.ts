@@ -11,17 +11,18 @@ import { AuthService } from '../_services/auth.service';
 export class TenantRegistrationComponent implements OnInit {
 
 
-    loginForm: FormGroup;
+    registrationForm: FormGroup;
 
     // access to form fields
-    get f() { return this.loginForm.controls; }
+    get f() { return this.registrationForm.controls; }
 
 
     constructor(private activatedRoute: ActivatedRoute, private router: Router, private formBuilder: FormBuilder, private authService: AuthService) { }
 
   ngOnInit() {
 
-    this.loginForm = this.formBuilder.group({
+    this.registrationForm = this.formBuilder.group({
+        companyname: ["", Validators.required],
         username: ['', Validators.required],
         password: ['', Validators.required],
         repeatpassword: ['', Validators.required]
@@ -31,13 +32,13 @@ export class TenantRegistrationComponent implements OnInit {
 
   onSubmit() {
 
-    if (this.loginForm.invalid) {
+    if (this.registrationForm.invalid) {
       return;
     }
 
 
 
-    this.authService.login(this.f.username.value, this.f.password.value, "tenant");
+    this.authService.login(this.f.username.value, this.f.password.value, "tenant", this.f.companyname.value);
     
 
     this.router.navigate(['/tenant-panel']);
