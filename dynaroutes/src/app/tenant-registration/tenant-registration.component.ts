@@ -37,7 +37,7 @@ export class TenantRegistrationComponent implements OnInit {
 
 
 
-    this.authService.login(this.f.username.value, this.f.password.value);
+    this.authService.login(this.f.username.value, this.f.password.value, "tenant");
     
 
     this.router.navigate(['/tenant-panel']);

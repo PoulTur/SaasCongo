@@ -18,7 +18,7 @@ export class ClientLoginComponent implements OnInit {
     // get params from parent route, otherwise undefined
     // https://stackoverflow.com/questions/34500147/angular-2-getting-routeparams-from-parent-component
 	this.activatedRoute.parent.params.subscribe(routeParams => {
-        this.tenant = routeParams["tenant"];  
+        this.tenant = routeParams["client"];  
     });
 
 
@@ -45,9 +45,9 @@ export class ClientLoginComponent implements OnInit {
       return;
     }
 
-    this.authService.login(this.f.username.value, this.f.password.value);
+    this.authService.login(this.f.username.value, this.f.password.value, "client");
 
-    this.router.navigate(["/tenant/" + this.tenant + "/client-panel"]);
+    this.router.navigate(["/client/" + this.tenant + "/client-panel"]);
 
 
 
