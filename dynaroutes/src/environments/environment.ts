@@ -3,7 +3,19 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  auth: {
+    CLIENT_DOMAIN: 'saas-congo.eu.auth0.com',
+    CLIENT_ID:     'B9WwAsty7FFg0fJBlSXpxAxcYh8xA4We',
+    REDIRECT_URI: "http://localhost:4200/tenant-panel"
+  }
+
+
+
+
+
+
+
 };
 
 /*

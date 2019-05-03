@@ -25,6 +25,7 @@ import { TenantHomeComponent } from './tenant-home/tenant-home.component';
 import { TenantLayoutComponent } from './tenant-layout/tenant-layout.component';
 import { ClientLayoutComponent } from './client-layout/client-layout.component';
 import { ClientPanelComponent } from './client-panel/client-panel.component';
+import { Auth0AuthService } from './_services/auth0-auth.service';
 
 
 
@@ -56,6 +57,7 @@ import { ClientPanelComponent } from './client-panel/client-panel.component';
   ],
   providers: [
       AuthService,
+      Auth0AuthService,
       HttpClientModule,
       AuthGuard,
       UnauthGuard

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { AuthService } from '../_services/auth.service';
+import { Auth0AuthService } from '../_services/auth0-auth.service';
 
 @Component({
   selector: 'app-tenant-login',
@@ -16,7 +17,7 @@ export class TenantLoginComponent implements OnInit {
     get f() { return this.loginForm.controls; }
 
 
-    constructor(private activatedRoute: ActivatedRoute, private router: Router, private formBuilder: FormBuilder, private authService: AuthService) { }
+    constructor(private activatedRoute: ActivatedRoute, private router: Router, private formBuilder: FormBuilder, private authService: Auth0AuthService) { }
 
   ngOnInit() {
 
